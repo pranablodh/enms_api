@@ -1,6 +1,6 @@
 const db             = require('./pgPool');
 const inputValidator = require('../inputValidator/inputValidator');
-const moment = require('moment');
+const Token          = require('../inputValidator/tokenGenerator');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
 
@@ -16,15 +16,18 @@ const newUser = (req, response) =>
         return response.status(400).send({'Message': 'Please Enter a Valid Email Address'});
     }
 
-    const createQuery =
-    `START TRANSACTION;
-        INSERT INTO user_info(uuid, company_name, owner_name, contact_number, email, registration_number,
-        gstin, address_1, address_2, address_3, city, district, pin_code, state, created_on, updated_on) 
-        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING uuid;
-	    INSERT INTO user_type(uuid, user_type) VALUES($1);
-	    INSERT INTO user_cred(uuid, password) VALUES($1);
-	    INSERT INTO user_verified(uuid, email_verified, mobile_verifed) VALUES($1);
-    COMMIT;`
+    const createQuery = `WITH data(uuid, company_name, owner_name, contact_number, email, registration_number,
+    gstin, address_1, address_2, address_3, city, district, pin_code, state, password, 
+    user_type, email_verified, mobile_verified) AS(VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 
+    $13, $14, $15, $16, $17, $18)),
+    ins1 AS(INSERT INTO user_info(uuid, company_name, owner_name, contact_number, email, 
+    registration_number, gstin, address_1, address_2, address_3, city, district, pin_code, state, created_on, updated_on) 
+    SELECT uuid, company_name, owner_name, contact_number, email, registration_number, gstin,address_1, address_2, address_3, 
+    city, district, pin_code, state, current_timestamp, current_timestamp FROM data RETURNING *),
+	ins2 AS(INSERT INTO user_type(uuid, user_type) SELECT uuid, CAST(user_type as int) FROM data RETURNING uuid),
+	ins3 AS(INSERT INTO user_cred(uuid, password) SELECT uuid, password FROM data RETURNING uuid)
+    INSERT INTO user_verified(uuid, email_verified, mobile_verified) SELECT uuid, CAST(email_verified as int), CAST(mobile_verified as int)
+    FROM data RETURNING uuid`
 
     const values = 
     [
@@ -42,12 +45,10 @@ const newUser = (req, response) =>
         req.body.district,
         req.body.pin_code,
         req.body.state,
-        moment(new Date()),
-        moment(new Date()),
         inputValidator.hashPassword(req.body.password),
-        //req.body.user_type,
-        //req.body.email_verified,
-        //req.body.mobile_verified
+        req.body.user_type,
+        0,
+        0
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -55,7 +56,7 @@ const newUser = (req, response) =>
         if(!err)
         {
             db.pool.end;
-            return response.status(200).send({'Message': 'User Registered', "Token": helper.generateToken(res.rows[0].uuid)});               
+            return response.status(200).send({'Message': 'User Registered', "Token": Token.generateToken(res.rows[0].uuid)});               
         }
 
         else if(err.routine === '_bt_check_unique')
