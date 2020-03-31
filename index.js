@@ -6,7 +6,7 @@ const cors       = require('cors');
 const dotenv     = require('dotenv');
 dotenv.config();
 const portNumber = process.env.SERVER_PORT;
-const userSelf   = require('./components/routers/userSelf');
+const userSelf   = require('./components/routers/user/userSelf');
 
 //Configure the App to Use BodyParser, Cors and SQL-Injection Detector
 app.use(bodyParser.urlencoded({extended: true}));

@@ -1,17 +1,14 @@
-const db             = require('./pgPool');
-const inputValidator = require('../inputValidator/inputValidator');
-const Token          = require('../inputValidator/tokenGenerator');
+const db             = require('../pgPool');
+const inputValidator = require('../../inputValidator/inputValidator');
 const otp            = require('otp-generator');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
 
 const newUser = (req, response, next) =>
 {
-    const email_otp  = otp.generate(6, { upperCase: false, specialChars: false });
-    const mobile_otp = otp.generate(6, { upperCase: false, specialChars: false });
+    const uuid  = uuidv4(req.body.gstin);
 
-    req.email_otp  = email_otp;
-    req.mobile_otp = mobile_otp;
+    req.body.uuid  = uuid;
 
     if(!req.body.email || !req.body.password)
     {
@@ -39,7 +36,7 @@ const newUser = (req, response, next) =>
 
     const values = 
     [
-        uuidv4(req.body.gstin),
+        uuid,
         req.body.company_name,
         req.body.owner_name,
         req.body.contact_number,
@@ -57,8 +54,8 @@ const newUser = (req, response, next) =>
         req.body.user_type,
         0,
         0,
-        email_otp,
-        mobile_otp
+        otp.generate(6, { upperCase: false, specialChars: false }),
+        otp.generate(6, { upperCase: false, specialChars: false })
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -67,7 +64,7 @@ const newUser = (req, response, next) =>
         {
             db.pool.end;
             next();
-            //return response.status(200).send({'Message': 'User Registered', "Token": Token.generateToken(res.rows[0].uuid)});               
+            return response.status(200).send({'Message': 'User Registered'});               
         }
 
         else if(err.routine === '_bt_check_unique')
@@ -85,21 +82,7 @@ const newUser = (req, response, next) =>
     });
 }
 
-const login = (req, response) =>
-{
-    if(!req.body.email || !req.body.password)
-    {
-        return response.status(400).send({'Message': 'Some Values Are Missing'});
-    }
-
-    if(!inputValidator.isValidEmail(req.body.email)) 
-    {
-        return response.status(400).send({'Message': 'Please Enter a Valid Email Address'});
-    }
-}
-
 module.exports = 
 {
-    newUser,
-    login      
+    newUser      
 }

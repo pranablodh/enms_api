@@ -1,4 +1,3 @@
-const db             = require('./pgPool');
 const nodemailer     = require('nodemailer');
 const dotenv         = require('dotenv');
 dotenv.config();
@@ -19,22 +18,21 @@ const sendOTP = (req, response) =>
     const mailOptions = 
     {
         from: 'cs.covid.tracking@gmail.com',
-        to: 'bumba007lodh@gmail.com',
+        to: req.email,
         subject: 'OTP For Registration in CSIoT Portal',
-        text: process.env.OTP_MESSAGE + ": " + req.email_otp
+        text: process.env.OTP_MESSAGE + req.email_otp
     };
+
     transporter.sendMail(mailOptions, function(error, info)
     {
         if (error) 
         {
           console.log(error);
-          return response.status(400).send({'Message': 'User Not Registered'});
         } 
         
         else 
         {
           console.log('Email sent: ' + info.response);
-          return response.status(200).send({'Message': 'User Registered'});  
         }
     });
 }
