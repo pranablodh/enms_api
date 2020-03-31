@@ -66,7 +66,7 @@ const newUser = (req, response, next) =>
             db.pool.end;
             next();
             return response.status(200).send({'Message': 'User Registered', 'Token': token.generateToken(uuid, 
-            req.body.company_name, req.body.email, req.body.contact_number, 0, 0)});               
+            req.body.company_name, req.body.email, req.body.contact_number)});               
         }
 
         else if(err.routine === '_bt_check_unique')

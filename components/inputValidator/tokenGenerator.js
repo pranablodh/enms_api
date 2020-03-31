@@ -4,16 +4,14 @@ dotenv.config();
 
 module.exports = 
 {
-    generateToken: function(uuid, company_name, email, contact_number, email_verified, mobile_verified)
+    generateToken: function(uuid, company_name, email, contact_number)
     {
         const token = jwt.sign
         ({
           uuid: uuid,
           company_name: company_name,
           email: email,
-          contact_number: contact_number,
-          email_verified: email_verified,
-          mobile_verified: mobile_verified
+          contact_number: contact_number
         },
           process.env.PRIVATE_KEY, { expiresIn: process.env.TOKEN_EXP }
         );

@@ -14,12 +14,11 @@ const login = (req, response, next) =>
         return response.status(400).send({'Message': 'Please Enter a Valid Email Address'});
     }
 
-    const createQuery = `SELECT i.uuid, i.company_name, i.email, i.contact_number, c.pasword, c.email_verified, c.mobile_verified 
-    FROM user_info i, user_cred c, user_verified v
-    JOIN user_cred c ON c.uuid = i.uuid 
-    JOIN user_verified v ON v.uuid = c.uuid
+    const createQuery = `SELECT i.uuid, i.company_name, i.email, i.contact_number, c.password, email_verified, mobile_verified 
+    FROM user_info i
+    INNER JOIN user_cred c ON c.uuid = i.uuid 
+    INNER JOIN user_verified v ON v.uuid = c.uuid
     WHERE i.email = $1`
-
 
     const values = 
     [
@@ -35,17 +34,54 @@ const login = (req, response, next) =>
             return response.status(400).send({'Message': 'Error.'});               
         }
 
-        // if(res.rows.length === 0)
-        // {
-        //     db.pool.end;
-        //     return response.status(400).send({'Message': 'Invalid OTP.'}); 
-        // }
+        else if(res.rows.length === 0)
+        {
+            db.pool.end;
+            return response.status(400).send({'Message': 'User Not Registered.'}); 
+        }
+
+        else if(inputValidator.comparePassword(res.rows[0].password, req.body.password))
+        {
+            if(res.rows[0].email_verified === 0 && res.rows[0].mobile_verified === 0)
+            {
+                db.pool.end;
+                return response.status(400).send({'Message': 'Email and Mobile Number are Not Verifed'}); 
+            }
+
+            else if(res.rows[0].mobile_verified === 0)
+            {
+                db.pool.end;
+                return response.status(400).send({'Message': 'Mobile Number is Not Verifed'}); 
+            }
+
+            else if(res.rows[0].email_verified === 0)
+            {
+                db.pool.end;
+                return response.status(400).send({'Message': 'Email is Not Verifed'}); 
+            }
+
+            else
+            {
+                //return response.status(200).send({'Message': 'You are Logged In.',
+                //'Token': token.generateToken(res.rows[0].uuid, res.rows[0].company_name, res.rows[0].email, res.rows[0].contact_number)});
+                req.body.token = token.generateToken(res.rows[0].uuid, res.rows[0].company_name,
+                                 res.rows[0].email, res.rows[0].contact_number);
+                req.body.uuid = res.rows[0].uuid;
+                next();
+            }
+        }
+
+        else if(!inputValidator.comparePassword(res.rows[0].password, req.body.password))
+        {
+            db.pool.end;
+            return response.status(400).send({'Message': 'Wrong Credentials.'});
+        }
 
         else
         {
             db.pool.end;
             console.log(res.rows);
-            return response.status(200).send({'Message': 'Email Verified.'});
+            return response.status(200).send({'Message': 'Login Failed.'});
         }
     });
 }
