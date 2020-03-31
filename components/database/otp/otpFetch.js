@@ -20,6 +20,11 @@ const fetchOtp = (req, response, next) =>
             return response.status(400).send({'Message': 'Error'});               
         }
 
+        if(res.rows.length === 0)
+        {
+            return response.status(400).send({'Message': 'User Not Found.'}); 
+        }
+
         else
         {
             req.mobile      = res.rows[0].contact_number;

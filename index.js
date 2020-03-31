@@ -6,13 +6,13 @@ const cors       = require('cors');
 const dotenv     = require('dotenv');
 dotenv.config();
 const portNumber = process.env.SERVER_PORT;
-const userSelf   = require('./components/routers/user/userSelf');
+const user   = require('./components/routers/user/user');
 
-//Configure the App to Use BodyParser, Cors and SQL-Injection Detector
+//Configure the App to Use BodyParser, Cors
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/user', userSelf.router);
+app.use('/user', user.router);
 
 
 app.get('/', (req, res) => 

@@ -1,5 +1,6 @@
 const db             = require('../pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
+const token          = require('../../inputValidator/tokenGenerator');
 const otp            = require('otp-generator');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
@@ -64,7 +65,8 @@ const newUser = (req, response, next) =>
         {
             db.pool.end;
             next();
-            return response.status(200).send({'Message': 'User Registered'});               
+            return response.status(200).send({'Message': 'User Registered', 'Token': token.generateToken(uuid, 
+            req.body.company_name, req.body.email, req.body.contact_number, 0, 0)});               
         }
 
         else if(err.routine === '_bt_check_unique')

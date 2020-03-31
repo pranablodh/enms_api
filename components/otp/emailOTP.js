@@ -25,14 +25,16 @@ const sendOTP = (req, response) =>
 
     transporter.sendMail(mailOptions, function(error, info)
     {
-        if (error) 
+        if(error) 
         {
           console.log(error);
+          return response.status(400).send({'Message': 'OTP Not Sent'});
         } 
         
         else 
         {
           console.log('Email sent: ' + info.response);
+          return response.status(200).send({'Message': 'OTP Sent'});
         }
     });
 }
