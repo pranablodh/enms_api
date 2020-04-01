@@ -2,7 +2,8 @@ const db = require('../dbConnection/pgPool');
 
 const deactivatingFunction = (req, response) =>
 {
-    const createQuery = `UPDATE user_cred SET active_flag = 0 WHERE uuid = $1 RETURNING *`
+    const createQuery = `WITH U AS(UPDATE user_cred SET active_flag = 0 WHERE uuid = $1 RETURNING *)
+    DELETE FROM user_token WHERE uuid = $1 RETURNING *`
 
     const values = 
     [

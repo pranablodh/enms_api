@@ -65,6 +65,8 @@ const newUser = (req, response, next) =>
         if(!err)
         {
             db.pool.end;
+            req.subject = process.env.REG_OTP_SUBJECT;
+            req.message = process.env.REG_OTP_MESSAGE
             next();
             return response.status(201).send({'Token': token.generateToken(uuid, req.body.company_name, 
             req.body.email, req.body.contact_number, 0, moment(new Date())._i, moment(new Date())._i, moment(new Date())._i)});               

@@ -19,8 +19,8 @@ const sendOTP = (req, response) =>
     {
         from: 'cs.covid.tracking@gmail.com',
         to: req.email,
-        subject: 'OTP For Registration in CSIoT Portal',
-        text: process.env.OTP_MESSAGE + req.email_otp
+        subject: req.subject,
+        text: req.message + " " + req.email_otp
     };
 
     transporter.sendMail(mailOptions, function(error, info)

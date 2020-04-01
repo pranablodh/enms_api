@@ -1,4 +1,6 @@
-const db = require('../dbConnection/pgPool');
+const db             = require('../dbConnection/pgPool');
+const dotenv         = require('dotenv');
+dotenv.config();
 
 const fetchOtp = (req, response, next) =>
 {
@@ -8,7 +10,7 @@ const fetchOtp = (req, response, next) =>
 
     const values = 
     [
-        req.body.uuid
+        req.body.uuid,
     ];
 
     db.pool.query(createQuery, values, (err, res)=>

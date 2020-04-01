@@ -87,7 +87,6 @@ const login = (req, response, next) =>
         else
         {
             db.pool.end;
-            console.log(res.rows);
             return response.status(400).send({'Message': 'Login Failed.'});
         }
     });
