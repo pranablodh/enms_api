@@ -1,4 +1,4 @@
-const db = require('../pgPool');
+const db = require('../dbConnection/pgPool');
 
 const fetchOtp = (req, response, next) =>
 {
@@ -22,7 +22,7 @@ const fetchOtp = (req, response, next) =>
 
         if(res.rows.length === 0)
         {
-            return response.status(400).send({'Message': 'User Not Found.'}); 
+            return response.status(404).send({'Message': 'User Not Found.'}); 
         }
 
         else

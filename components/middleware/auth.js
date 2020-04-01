@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const db  = require('../database/pgPool');
+const db  = require('../database/dbConnection/pgPool');
 
 const authentication = (req, response, next) =>
 {
@@ -43,7 +43,7 @@ const authentication = (req, response, next) =>
             else if(res.rows.length === 0)
             {
                 db.pool.end;
-                return response.status(404).send({'Message': 'Access Denied'});
+                return response.status(401).send({'Message': 'Access Denied'});
             }
 
             else

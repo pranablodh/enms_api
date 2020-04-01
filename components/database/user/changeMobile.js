@@ -1,4 +1,4 @@
-const db = require('../pgPool');
+const db = require('../dbConnection/pgPool');
 
 const changeMobile = (req, response) =>
 {
@@ -22,7 +22,7 @@ const changeMobile = (req, response) =>
         if(res.rows.length === 0)
         {
             db.pool.end;
-            return response.status(400).send({'Message': 'User Not Found.'}); 
+            return response.status(404).send({'Message': 'User Not Found.'}); 
         }
 
         else

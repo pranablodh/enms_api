@@ -1,4 +1,4 @@
-const db = require('../pgPool');
+const db = require('../dbConnection/pgPool');
 
 const tokenStore = (req, response) =>
 {
@@ -17,20 +17,20 @@ const tokenStore = (req, response) =>
         {
             console.log(err);
             db.pool.end;
-            return response.status(400).send({'Message': 'Login Failed'});
+            return response.status(403).send({'Message': 'Login Failed'});
         }
 
         else if(res.rows.length > 0)
         {
             db.pool.end;
-            return response.status(200).send({'Message': 'You are Logged In.', 'Token': req.body.token});
+            return response.status(200).send({'Token': req.body.token});
         }
 
         else
         {
             db.pool.end;
             console.log(res.rows);
-            return response.status(200).send({'Message': 'Login Failed.'});
+            return response.status(403).send({'Message': 'Login Failed.'});
         }
     });
 }

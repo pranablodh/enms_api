@@ -1,13 +1,12 @@
 const db = require('../dbConnection/pgPool');
 
-const changeEmail = (req, response) =>
+const deactivatingFunction = (req, response) =>
 {
-    const createQuery = `UPDATE user_info SET email = $2 WHERE uuid = $1 RETURNING *`
+    const createQuery = `UPDATE user_cred SET active_flag = 0 WHERE uuid = $1 RETURNING *`
 
     const values = 
     [
-        req.body.uuid,
-        req.body.email
+        req.body.uuid
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -19,21 +18,21 @@ const changeEmail = (req, response) =>
             return response.status(400).send({'Message': 'Error.'});               
         }
 
-        if(res.rows.length === 0)
+        else if(res.rows.length === 0)
         {
             db.pool.end;
-            return response.status(404).send({'Message': 'User Not Found.'}); 
+            return response.status(404).send({'Message': 'User Not Registered.'}); 
         }
 
         else
         {
             db.pool.end;
-            return response.status(200).send({'Message': 'Email ID Updated.'});
+            return response.status(201).send({'Message': 'Account Deactivated.'});
         }
     });
 }
 
-module.exports = 
+module.exports =
 {
-    changeEmail
+    deactivatingFunction
 }

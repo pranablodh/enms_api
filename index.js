@@ -8,6 +8,7 @@ dotenv.config();
 const portNumber = process.env.SERVER_PORT;
 const user   = require('./components/routers/user/user');
 
+
 //Configure the App to Use BodyParser, Cors
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

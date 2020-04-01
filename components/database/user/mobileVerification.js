@@ -1,4 +1,4 @@
-const db = require('../pgPool');
+const db = require('../dbConnection/pgPool');
 
 const verifyMobile = (req, response) =>
 {
@@ -23,7 +23,7 @@ const verifyMobile = (req, response) =>
         if(res.rows.length === 0)
         {
             db.pool.end;
-            return response.status(400).send({'Message': 'Invalid OTP.'}); 
+            return response.status(404).send({'Message': 'Invalid OTP.'}); 
         }
 
         else

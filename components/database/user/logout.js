@@ -1,4 +1,4 @@
-const db = require('../pgPool');
+const db = require('../dbConnection/pgPool');
 
 const logout = (req, response) =>
 {

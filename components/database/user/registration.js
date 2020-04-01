@@ -1,7 +1,8 @@
-const db             = require('../pgPool');
+const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
 const token          = require('../../inputValidator/tokenGenerator');
 const otp            = require('otp-generator');
+const moment         = require('moment');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
 
@@ -26,11 +27,11 @@ const newUser = (req, response, next) =>
     mobile_verified, email_otp, mobile_otp) AS(VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 
     $15, $16, $17, $18, $19, $20)),
     ins1 AS(INSERT INTO user_info(uuid, company_name, owner_name, contact_number, email, registration_number, gstin, 
-    address_1, address_2, address_3, city, district, pin_code, state, created_on, updated_on) 
+    address_1, address_2, address_3, city, district, pin_code, state, created_at, updated_at) 
     SELECT uuid, company_name, owner_name, contact_number, email, registration_number, gstin,address_1, address_2, address_3, 
     city, district, pin_code, state, current_timestamp, current_timestamp FROM data RETURNING *),
 	ins2 AS(INSERT INTO user_type(uuid, user_type) SELECT uuid, CAST(user_type as int) FROM data RETURNING uuid),
-    ins3 AS(INSERT INTO user_cred(uuid, password) SELECT uuid, password FROM data RETURNING uuid),
+    ins3 AS(INSERT INTO user_cred(uuid, password, active_flag, pass_updated_at) SELECT uuid, password, 1, current_timestamp FROM data RETURNING uuid),
     ins4 AS(INSERT INTO user_otp(uuid, email_otp, mobile_otp) SELECT uuid, email_otp, mobile_otp FROM data RETURNING uuid)
     INSERT INTO user_verified(uuid, email_verified, mobile_verified) SELECT uuid, CAST(email_verified as int), 
     CAST(mobile_verified as int) FROM data RETURNING uuid`
@@ -52,7 +53,7 @@ const newUser = (req, response, next) =>
         req.body.pin_code,
         req.body.state,
         inputValidator.hashPassword(req.body.password),
-        req.body.user_type,
+        0,
         0,
         0,
         otp.generate(6, { upperCase: false, specialChars: false }),
@@ -65,14 +66,33 @@ const newUser = (req, response, next) =>
         {
             db.pool.end;
             next();
-            return response.status(200).send({'Message': 'User Registered', 'Token': token.generateToken(uuid, 
-            req.body.company_name, req.body.email, req.body.contact_number)});               
+            return response.status(201).send({'Token': token.generateToken(uuid, req.body.company_name, 
+            req.body.email, req.body.contact_number, 0, moment(new Date())._i, moment(new Date())._i, moment(new Date())._i)});               
         }
 
         else if(err.routine === '_bt_check_unique')
         {
             db.pool.end;
-            return response.status(400).send({'Message': 'User with that GSTIN Already Exist'})
+
+            if(err.detail.includes('contact_number'))
+            {
+                return response.status(405).send({'Message': 'User with that Contact Number Already Exist'});
+            }
+
+            else if(err.detail.includes('email'))
+            {
+                return response.status(405).send({'Message': 'User with that Email ID Already Exist'});
+            }
+
+            else if(err.detail.includes('gstin'))
+            {
+                return response.status(405).send({'Message': 'User with that GSTIN Already Exist'});
+            }
+
+            else if(err.detail.includes('registration_number'))
+            {
+                return response.status(405).send({'Message': 'User with that Registration Number Already Exist'});
+            }
         }
 
         else

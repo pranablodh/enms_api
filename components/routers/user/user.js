@@ -11,6 +11,9 @@ const login                  = require('../../database/user/login');
 const tokenStore             = require('../../database/user/sessionTokenStore');
 const logout                 = require('../../database/user/logout');
 const auth                   = require('../../middleware/auth');
+const deactiveAccount        = require('../../database/user/deactivateAccount');
+const deactivatingFunction   = require('../../database/user/deactivatingFunction');
+
 
 router.post('/registration', userRegistration.newUser, otpFetch.fetchOtp, emailOtp.sendOTP);
 router.post('/verifyEmail', auth.authentication, verifyEmail.verifyEmail);
@@ -20,6 +23,7 @@ router.post('/updateMobile', auth.authentication, updateMobile.changeMobile);
 router.post('/updateEmail', auth.authentication, updateEmail.changeEmail);
 router.get('/login', login.login, tokenStore.tokenStore);
 router.get('/logout', auth.authentication, logout.logout);
+router.get('/deactivate', auth.authentication, deactiveAccount.deactivate, deactivatingFunction.deactivatingFunction);
 
 
 module.exports = 
