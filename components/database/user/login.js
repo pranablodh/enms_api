@@ -72,7 +72,7 @@ const login = (req, response, next) =>
             {
                 req.body.token = token.generateToken(res.rows[0].uuid, res.rows[0].company_name,
                                  res.rows[0].email, res.rows[0].contact_number, res.rows[0].user_type, 
-                                 res.rows[0].created_at, res.rows[0].updated_at, res.rows[0].pass_updated_at);
+                                 res.rows[0].created_at, res.rows[0].updated_at);
                 req.body.uuid = res.rows[0].uuid;
                 next();
             }

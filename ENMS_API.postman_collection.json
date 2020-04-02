@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "0e552dcc-6a72-4120-b476-a33c3bf9f352",
+		"name": "ENMS_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba007lodh@gmail.com\",\n    \"registration_number\":\"ABCD123454FK\",\n    \"gstin\":\"121asAJasfgfgf7sassasa3aasa55hK\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Endpoint Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Email Verify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\":\"4b7w3x\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/verifyEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"verifyEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mobile Verify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODk0MSwiZXhwIjoxNTg2NDQzNzQxfQ.QLC31RXV1Rotmx1GzqMcP7o1nVNxp-g2pVcStsQRq6k",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\":\"kh9od4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/verifyMobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"verifyMobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend Email OTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNjVlYWM3ZWEtOTg5ZS00YTkyLTg1MWMtYjk0MzVhYzZiYWRiIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJpYXQiOjE1ODU2NzYzMDUsImV4cCI6MTU4NjI4MTEwNX0.f7NfdOWiiBzVwLP78PKhyBcaEUTlVCFOIXmm_GlpGio",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/resendEmailOtp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"resendEmailOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Mobile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uuid\":\"6903ec48-76c3-4fa3-bd4b-269bd8e60947\",\n\t\"mobile\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/updateMobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"updateMobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uuid\":\"6903ec48-76c3-4fa3-bd4b-269bd8e60947\",\n\t\"email\":\"pranablodh@outlook.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/updateEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"updateEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\",\n\t\"password\":\"Qwerty1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZWJmMjk5OWYtMmRhMC00MzhmLTgzZjktYjQ3YWUxZWQ3NTE1IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAxVDEyOjQ2OjUyLjU4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMVQxMjo0Njo1Mi41ODRaIiwicGFzc3dvcmRfY2hhbmdlZCI6IjIwMjAtMDQtMDFUMTI6NDY6NTIuNTg0WiIsImlhdCI6MTU4NTc1MzQ0MSwiZXhwIjoxNTg2MzU4MjQxfQ.7RdCn09JZAxyPcCPMeCgkNEes4DyfbmwLwvRrPTDKJ8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\",\n\t\"password\":\"Qwerty1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/resetPasswordRequest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"resetPasswordRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\":\"w37tyd\",\n\t\"password\":\"Qwerty1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/resetPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiY2UxNWQ0OTktODhkMy00MTU2LWEzOGYtYWY5NTU1NWJlZGM0IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAxVDE2OjI2OjEyLjgwN1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMVQxNjoyNjoxMi44MDdaIiwicGFzc3dvcmRfY2hhbmdlZCI6IjIwMjAtMDQtMDFUMTg6NTI6NDQuMzUwWiIsImlhdCI6MTU4NTgwOTIzNywiZXhwIjoxNTg2NDE0MDM3fQ.O8lIPheZpQuBKzoBpPi-JeCxma89Z6ARjVd_t-PtbVQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"newPassword\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/changePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change User Details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNGI4YmYzMGUtYWM1Zi00YTExLWFlNjctNGRkYTFlYTAwNjg0IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDc6NDguMDQ3WiIsImlhdCI6MTU4NTgzNTMzOCwiZXhwIjoxNTg2NDQwMTM4fQ.a_r_CJQad_sO32fnUQM6Qok1IRcwMGj5OoGMD8Ih4vg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company_name\":\"C_S\",\n    \"owner_name\":\"Arpan_Sen\",\n    \"registration_number\":\"ABCD123454FKG\",\n    \"gstin\":\"1255hK\",\n    \"address_1\":\"Bankimpally_East\",\n    \"address_2\":\"MadhyamgraM\",\n    \"address_3\":\"PO_Madhyamgram\",\n    \"city\":\"KolkatA\",\n    \"district\":\"North_24_Parganas\",\n    \"pin_code\":\"700130\",\n    \"state\":\"West_Bengal\",\n    \"password\":\"Qwerty1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/changeUserDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"changeUserDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"email\":\"pranablodh@outlook.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/changeEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"changeEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Mobile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI4MTAwNTg0MTAwIiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzOTE3OSwiZXhwIjoxNTg2NDQzOTc5fQ.MA5T6otyxe3P7KmWA5b9GGN2aoLfloy9BbxJUf7RlY4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"mobile\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/changeMobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"changeMobile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

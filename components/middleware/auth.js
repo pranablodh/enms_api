@@ -18,10 +18,12 @@ const authentication = (req, response, next) =>
             return response.status(400).send({'Message': 'Invalid Token'});
         }
 
-        const createQuery = `SELECT * FROM user_token WHERE uuid = $1`
+        const createQuery = `SELECT * FROM user_token WHERE uuid = $1 AND access_token = $2`
+
         const values = 
         [
-            decoded.uuid
+            decoded.uuid,
+            req.headers['x-access-token']
         ];
 
         db.pool.query(createQuery, values, (err, res)=>

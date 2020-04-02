@@ -3,7 +3,7 @@ const db = require('../dbConnection/pgPool');
 const tokenStore = (req, response) =>
 {
     const createQuery = `INSERT INTO user_token(uuid, access_token) VALUES($1, $2)
-    ON CONFLICT (uuid) DO UPDATE SET access_token = EXCLUDED.access_token RETURNING *`
+    ON CONFLICT (uuid) DO UPDATE SET access_token = EXCLUDED.access_token, uuid = EXCLUDED.uuid RETURNING *`
 
     const values = 
     [
@@ -17,7 +17,7 @@ const tokenStore = (req, response) =>
         {
             console.log(err);
             db.pool.end;
-            return response.status(403).send({'Message': 'Login Failed'});
+            return response.status(403).send({'Message': 'Error.'});
         }
 
         else if(res.rows.length > 0)
