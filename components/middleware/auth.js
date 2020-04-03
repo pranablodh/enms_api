@@ -3,7 +3,8 @@ const db  = require('../database/dbConnection/pgPool');
 
 const authentication = (req, response, next) =>
 {
-    const token = req.headers['x-access-token'];
+    const token   = req.headers['x-access-token'];
+    const newFlag = req.headers['new-flag'];
 
     if(!token) 
     {
@@ -42,7 +43,22 @@ const authentication = (req, response, next) =>
                 next();
             }
 
-            else if(res.rows.length === 0)
+            else if(res.rows.length === 0 && newFlag === '1')
+            {
+                db.pool.end;
+                req.body.uuid = decoded.uuid;
+                req.subject   = process.env.REG_OTP_SUBJECT;
+                req.message   = process.env.REG_OTP_MESSAGE;
+                next();
+            }
+
+            else if(res.rows.length === 0 && newFlag === '0')
+            {
+                db.pool.end;
+                return response.status(401).send({'Message': 'Access Denied'});
+            }
+
+            else if(res.rows.length === 0 && typeof newFlag === 'undefined')
             {
                 db.pool.end;
                 return response.status(401).send({'Message': 'Access Denied'});

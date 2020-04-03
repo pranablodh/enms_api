@@ -2,11 +2,12 @@ const db = require('../dbConnection/pgPool');
 
 const logout = (req, response) =>
 {
-    const createQuery = `DELETE FROM user_token WHERE uuid = $1 RETURNING *`
+    const createQuery = `DELETE FROM user_token WHERE uuid = $1 AND access_token = $2 RETURNING *`
 
     const values =
     [
-        req.body.uuid
+        req.body.uuid,
+        req.headers['x-access-token']
     ];
 
     db.pool.query(createQuery, values, (err, res)=>

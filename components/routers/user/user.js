@@ -7,6 +7,7 @@ const verifyEmail            = require('../../database/user/emailVerification');
 const verifyMobile           = require('../../database/user/mobileVerification');
 const updateMobile           = require('../../database/user/changeMobileReg');
 const updateEmail            = require('../../database/user/changeEmailReg');
+const sessionRestrictor      = require('../../middleware/sessionRestrictor');
 const login                  = require('../../database/user/login');
 const tokenStore             = require('../../database/user/sessionTokenStore');
 const logout                 = require('../../database/user/logout');
@@ -29,7 +30,7 @@ router.post('/verifyMobile', auth.authentication, verifyMobile.verifyMobile);
 router.get('/resendEmailOtp', auth.authentication, otpFetch.fetchOtp, emailOtp.sendOTP);
 router.post('/updateMobile', auth.authentication, updateMobile.changeMobile);
 router.post('/updateEmail', auth.authentication, updateEmail.changeEmail);
-router.get('/login', login.login, tokenStore.tokenStore);
+router.get('/login', sessionRestrictor.sessionRestrictor, login.login, tokenStore.tokenStore);
 router.get('/logout', auth.authentication, logout.logout);
 router.get('/deactivate', auth.authentication, deactiveAccount.deactivate, deactivatingFunction.deactivatingFunction);
 router.post('/resetPasswordRequest', userValidation.userValidator, resetPassword.resetPassword, otpFetch.fetchOtp, emailOtp.sendOTP);
@@ -38,6 +39,8 @@ router.post('/changePassword', auth.authentication, checkPassword.checkPassword,
 router.post('/changeUserDetails', auth.authentication, checkPassword.checkPassword, changeUserDetails.changeUserDetails, tokenStore.tokenStore);
 router.post('/changeEmail', auth.authentication, checkPassword.checkPassword, changeEmail.changeEmail, otpFetch.fetchOtp, emailOtp.sendOTP);
 router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, changeMobile.changeMobile);
+
+router.post('/session', sessionRestrictor.sessionRestrictor);
 
 module.exports = 
 {

@@ -10,8 +10,20 @@ const transporter = nodemailer.createTransport
     {
         user: 'cs.covid.tracking@gmail.com',
         pass: 'Qwerty@1234'
-    }
+     }
 });
+
+// const transporter = nodemailer.createTransport
+// ({
+//     host: 'mail.consistentservices.com',
+//     port: 465,
+//     secure: true, // true for 465, false for other ports
+//     auth: 
+//     {
+//       user: 'pranablodh@consistentservices.com',
+//       pass: 'Bumb@98047'
+//     }
+// });
 
 const sendOTP = (req, response) =>
 {

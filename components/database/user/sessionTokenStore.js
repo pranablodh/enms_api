@@ -2,8 +2,7 @@ const db = require('../dbConnection/pgPool');
 
 const tokenStore = (req, response) =>
 {
-    const createQuery = `INSERT INTO user_token(uuid, access_token) VALUES($1, $2)
-    ON CONFLICT (uuid) DO UPDATE SET access_token = EXCLUDED.access_token, uuid = EXCLUDED.uuid RETURNING *`
+    const createQuery = `INSERT INTO user_token(uuid, access_token) VALUES($1, $2) RETURNING *`
 
     const values = 
     [
