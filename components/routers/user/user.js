@@ -8,6 +8,7 @@ const verifyMobile           = require('../../database/user/mobileVerification')
 const updateMobile           = require('../../database/user/changeMobileReg');
 const updateEmail            = require('../../database/user/changeEmailReg');
 const sessionRestrictor      = require('../../middleware/sessionRestrictor');
+const sessionList            = require('../../database/user/sessionList');
 const login                  = require('../../database/user/login');
 const tokenStore             = require('../../database/user/sessionTokenStore');
 const logout                 = require('../../database/user/logout');
@@ -39,8 +40,7 @@ router.post('/changePassword', auth.authentication, checkPassword.checkPassword,
 router.post('/changeUserDetails', auth.authentication, checkPassword.checkPassword, changeUserDetails.changeUserDetails, tokenStore.tokenStore);
 router.post('/changeEmail', auth.authentication, checkPassword.checkPassword, changeEmail.changeEmail, otpFetch.fetchOtp, emailOtp.sendOTP);
 router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, changeMobile.changeMobile);
-
-router.post('/session', sessionRestrictor.sessionRestrictor);
+router.get('/sessionList', sessionList.sessionList);
 
 module.exports = 
 {
