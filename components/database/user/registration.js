@@ -1,7 +1,7 @@
 const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
 const token          = require('../../inputValidator/tokenGenerator');
-const otp            = require('otp-generator');
+const otp            = require('../../otp/otpGenerator');
 const moment         = require('moment');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
@@ -56,8 +56,8 @@ const newUser = (req, response, next) =>
         0,
         0,
         0,
-        otp.generate(6, { upperCase: false, specialChars: false }),
-        otp.generate(6, { upperCase: false, specialChars: false })
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH),
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH)
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -65,6 +65,7 @@ const newUser = (req, response, next) =>
         if(!err)
         {
             db.pool.end;
+            req.regFlag = 1;
             req.subject = process.env.REG_OTP_SUBJECT;
             req.message = process.env.REG_OTP_MESSAGE;
             next();

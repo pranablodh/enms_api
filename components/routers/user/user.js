@@ -3,6 +3,7 @@ const router                 = express.Router();
 const userRegistration       = require('../../database/user/registration');
 const otpFetch               = require('../../database/otp/otpFetch');
 const emailOtp               = require('../../otp/emailOTP');
+const otpSMS                 = require('../../otp/smsOTP');
 const verifyEmail            = require('../../database/user/emailVerification');
 const verifyMobile           = require('../../database/user/mobileVerification');
 const updateMobile           = require('../../database/user/changeMobileReg');
@@ -25,21 +26,24 @@ const changeEmail            = require('../../database/user/changeEmail');
 const changeMobile           = require('../../database/user/changeMobile');
 
 
-router.post('/registration', userRegistration.newUser, otpFetch.fetchOtp, emailOtp.sendOTP);
+
+
+router.post('/registration', userRegistration.newUser, otpFetch.fetchOtp, emailOtp.sendOTP, otpSMS.sendSMS);
 router.post('/verifyEmail', auth.authentication, verifyEmail.verifyEmail);
 router.post('/verifyMobile', auth.authentication, verifyMobile.verifyMobile);
 router.get('/resendEmailOtp', auth.authentication, otpFetch.fetchOtp, emailOtp.sendOTP);
+router.get('/resendSMSOtp', auth.authentication, otpFetch.fetchOtp, otpSMS.sendSMS);
 router.post('/updateMobile', auth.authentication, updateMobile.changeMobile);
 router.post('/updateEmail', auth.authentication, updateEmail.changeEmail);
 router.get('/login', sessionRestrictor.sessionRestrictor, login.login, tokenStore.tokenStore);
 router.get('/logout', auth.authentication, logout.logout);
 router.get('/deactivate', auth.authentication, deactiveAccount.deactivate, deactivatingFunction.deactivatingFunction);
-router.post('/resetPasswordRequest', userValidation.userValidator, resetPassword.resetPassword, otpFetch.fetchOtp, emailOtp.sendOTP);
+router.post('/resetPasswordRequest', userValidation.userValidator, resetPassword.resetPassword, otpFetch.fetchOtp, emailOtp.sendOTP, otpSMS.sendSMS);
 router.post('/resetPassword', resetPasswordFunction.resetPasswordFunction);
 router.post('/changePassword', auth.authentication, checkPassword.checkPassword, changePassword.changePassword);
 router.post('/changeUserDetails', auth.authentication, checkPassword.checkPassword, changeUserDetails.changeUserDetails, tokenStore.tokenStore);
 router.post('/changeEmail', auth.authentication, checkPassword.checkPassword, changeEmail.changeEmail, otpFetch.fetchOtp, emailOtp.sendOTP);
-router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, changeMobile.changeMobile);
+router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, changeMobile.changeMobile, otpFetch.fetchOtp, otpSMS.sendSMS);
 router.get('/sessionList', sessionList.sessionList);
 
 module.exports = 

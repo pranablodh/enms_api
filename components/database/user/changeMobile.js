@@ -1,6 +1,8 @@
 const db             = require('../dbConnection/pgPool');
-const otp            = require('otp-generator');
+const otp            = require('../../otp/otpGenerator');
 const inputValidator = require('../../inputValidator/inputValidator');
+const dotenv         = require('dotenv');
+dotenv.config();
 
 const changeMobile = (req, response, next) =>
 {
@@ -18,7 +20,7 @@ const changeMobile = (req, response, next) =>
     [
         req.body.uuid,
         req.body.mobile,
-        otp.generate(6, { upperCase: false, specialChars: false })
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH)
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -39,8 +41,7 @@ const changeMobile = (req, response, next) =>
         else if(res.rows.length > 0)
         {
             db.pool.end;
-            req.subject = process.env.EMAIL_CHANGE_SUBJECT;
-            req.message = process.env.EMAIL_CHANGE_MESSAGE;
+            req.regFlag = 1;
             next();
             return response.status(200).send({'Message': 'Mobile Number Updated.'});
         }

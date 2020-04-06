@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba007lodh@gmail.com\",\n    \"registration_number\":\"ABCD123454FK\",\n    \"gstin\":\"121asAJasfgfgf7sassasa3aasa55hK\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty1234\"\n}",
+					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba007lodh@gmail.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"121asAJasfgfgf7sasa3aasa55hK\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,25 +29,6 @@
 					"path": [
 						"user",
 						"registration"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "API Endpoint Test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
 					]
 				}
 			},
@@ -100,7 +81,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODk0MSwiZXhwIjoxNTg2NDQzNzQxfQ.QLC31RXV1Rotmx1GzqMcP7o1nVNxp-g2pVcStsQRq6k",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI4MTAwNTg0MTAwIiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzOTE3OSwiZXhwIjoxNTg2NDQzOTc5fQ.MA5T6otyxe3P7KmWA5b9GGN2aoLfloy9BbxJUf7RlY4",
 						"type": "text"
 					},
 					{
@@ -143,12 +124,17 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNjVlYWM3ZWEtOTg5ZS00YTkyLTg1MWMtYjk0MzVhYzZiYWRiIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJpYXQiOjE1ODU2NzYzMDUsImV4cCI6MTU4NjI4MTEwNX0.f7NfdOWiiBzVwLP78PKhyBcaEUTlVCFOIXmm_GlpGio",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNmMzODBhYmYtMWZkZi00MzhiLTlhODctYmE0N2FhYzY3YTFmIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAyVDE4OjA0OjQzLjQ0OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMlQxODowNDo0My40NTBaIiwiaWF0IjoxNTg1ODUwNjgzLCJleHAiOjE1ODY0NTU0ODN9.WklcScJp7Pfak8z4pKWpNSHu1ebrKTl8VlvQJTJtnUQ",
 						"type": "text"
 					},
 					{
 						"key": "Content-Type",
 						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "new-flag",
+						"value": "1",
 						"type": "text"
 					}
 				],
@@ -276,7 +262,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNmMzODBhYmYtMWZkZi00MzhiLTlhODctYmE0N2FhYzY3YTFmIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAyVDE4OjA0OjQzLjQyNloiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMlQxODowNDo0My40MjZaIiwiaWF0IjoxNTg2MDMzNzI0LCJleHAiOjE1ODY2Mzg1MjR9.50SG4CLtjT3xOvXBhaeCdjIALO68VfHKbsLWKbKNX6c",
 						"type": "text"
 					},
 					{
@@ -532,7 +518,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI4MTAwNTg0MTAwIiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzOTE3OSwiZXhwIjoxNTg2NDQzOTc5fQ.MA5T6otyxe3P7KmWA5b9GGN2aoLfloy9BbxJUf7RlY4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYzY3OTIzODItNTAzYy00NjgxLWJmNTMtZWVmYWI4ZWNkYWU2IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA2VDA3OjU4OjE2Ljc2N1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wNlQwNzo1ODoxNi43NjdaIiwiaWF0IjoxNTg2MTY0MjM1LCJleHAiOjE1ODY3NjkwMzV9.N-yMfSgOFRDRDKvJm8e9F6qtnzLCVV6RSGNDW8_xkyw",
 						"type": "text"
 					},
 					{
@@ -560,6 +546,81 @@
 					"path": [
 						"user",
 						"changeMobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/sessionList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"sessionList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend SMS OTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYzY3OTIzODItNTAzYy00NjgxLWJmNTMtZWVmYWI4ZWNkYWU2IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA2VDA3OjU4OjE2Ljc2N1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wNlQwNzo1ODoxNi43NjdaIiwiaWF0IjoxNTg2MTY0MjM1LCJleHAiOjE1ODY3NjkwMzV9.N-yMfSgOFRDRDKvJm8e9F6qtnzLCVV6RSGNDW8_xkyw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/resendSMSOtp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"resendSMSOtp"
 					]
 				}
 			},

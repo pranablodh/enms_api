@@ -29,10 +29,10 @@ const fetchOtp = (req, response, next) =>
 
         else
         {
-            req.mobile      = res.rows[0].contact_number;
-            req.email       = res.rows[0].email;
-            req.email_otp   = res.rows[0].email_otp;
-            req.mobile_otp  = res.rows[0].mobile_otp;
+            req.mobile        = res.rows[0].contact_number;
+            req.email         = res.rows[0].email;
+            req.email_message = req.message + " " + res.rows[0].email_otp;
+            req.sms_otp       = res.rows[0].mobile_otp;
             next();
         }
     });

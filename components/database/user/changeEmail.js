@@ -1,6 +1,8 @@
 const db             = require('../dbConnection/pgPool');
-const otp            = require('otp-generator');
 const inputValidator = require('../../inputValidator/inputValidator');
+const otp            = require('../../otp/otpGenerator');
+const dotenv         = require('dotenv');
+dotenv.config();
 
 const changeEmail = (req, response, next) =>
 {
@@ -18,7 +20,7 @@ const changeEmail = (req, response, next) =>
     [
         req.body.uuid,
         req.body.email,
-        otp.generate(6, { upperCase: false, specialChars: false })
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH)
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
