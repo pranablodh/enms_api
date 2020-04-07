@@ -41,7 +41,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
 						"type": "text"
 					},
 					{
@@ -52,7 +52,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"otp\":\"4b7w3x\"\n}",
+					"raw": "{\n\t\"otp\":\"462749\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,18 +81,23 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJwcmFuYWJsb2RoQG91dGxvb2suY29tIiwiY29udGFjdF9udW1iZXIiOiI4MTAwNTg0MTAwIiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzOTE3OSwiZXhwIjoxNTg2NDQzOTc5fQ.MA5T6otyxe3P7KmWA5b9GGN2aoLfloy9BbxJUf7RlY4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
 						"type": "text"
 					},
 					{
 						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "new-flag",
+						"value": "1",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"otp\":\"kh9od4\"\n}",
+					"raw": "{\n\t\"otp\":\"922496\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -115,7 +120,7 @@
 			"response": []
 		},
 		{
-			"name": "Resend Email OTP",
+			"name": "Send Email OTP",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -124,17 +129,12 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNmMzODBhYmYtMWZkZi00MzhiLTlhODctYmE0N2FhYzY3YTFmIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAyVDE4OjA0OjQzLjQ0OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMlQxODowNDo0My40NTBaIiwiaWF0IjoxNTg1ODUwNjgzLCJleHAiOjE1ODY0NTU0ODN9.WklcScJp7Pfak8z4pKWpNSHu1ebrKTl8VlvQJTJtnUQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
 						"type": "text"
 					},
 					{
 						"key": "Content-Type",
 						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "new-flag",
-						"value": "1",
 						"type": "text"
 					}
 				],
@@ -148,7 +148,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/user/resendEmailOtp",
+					"raw": "http://localhost:3000/user/sendEmailOtp",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -156,20 +156,34 @@
 					"port": "3000",
 					"path": [
 						"user",
-						"resendEmailOtp"
+						"sendEmailOtp"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Mobile",
+			"name": "Send SMS OTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
-				"header": [],
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"uuid\":\"6903ec48-76c3-4fa3-bd4b-269bd8e60947\",\n\t\"mobile\":\"9804710805\"\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -177,7 +191,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/user/updateMobile",
+					"raw": "http://localhost:3000/user/sendSMSOtp",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -185,36 +199,7 @@
 					"port": "3000",
 					"path": [
 						"user",
-						"updateMobile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Email",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"uuid\":\"6903ec48-76c3-4fa3-bd4b-269bd8e60947\",\n\t\"email\":\"pranablodh@outlook.com\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/user/updateEmail",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user",
-						"updateEmail"
+						"sendSMSOtp"
 					]
 				}
 			},
@@ -253,6 +238,38 @@
 			"response": []
 		},
 		{
+			"name": "Get Session List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/sessionList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"sessionList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Logout",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -262,7 +279,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNmMzODBhYmYtMWZkZi00MzhiLTlhODctYmE0N2FhYzY3YTFmIiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAyVDE4OjA0OjQzLjQyNloiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMlQxODowNDo0My40MjZaIiwiaWF0IjoxNTg2MDMzNzI0LCJleHAiOjE1ODY2Mzg1MjR9.50SG4CLtjT3xOvXBhaeCdjIALO68VfHKbsLWKbKNX6c",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxODI5LCJleHAiOjE1ODY4ODY2Mjl9.QUKjWO_cQgXPdYtNFl7e_gu0yGqBdo4jF5_dGIcyRfQ",
 						"type": "text"
 					},
 					{
@@ -310,7 +327,7 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZWJmMjk5OWYtMmRhMC00MzhmLTgzZjktYjQ3YWUxZWQ3NTE1IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAxVDEyOjQ2OjUyLjU4NFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMVQxMjo0Njo1Mi41ODRaIiwicGFzc3dvcmRfY2hhbmdlZCI6IjIwMjAtMDQtMDFUMTI6NDY6NTIuNTg0WiIsImlhdCI6MTU4NTc1MzQ0MSwiZXhwIjoxNTg2MzU4MjQxfQ.7RdCn09JZAxyPcCPMeCgkNEes4DyfbmwLwvRrPTDKJ8",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsInVzZXJfdHlwZSI6MCwiY3JlYXRlZF9hdCI6IjIwMjAtMDQtMDdUMTc6MjE6MjIuOTc4WiIsInVwZGF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJpYXQiOjE1ODYyODAwOTEsImV4cCI6MTU4Njg4NDg5MX0.pMNhCBIJTZPmh5aD9TzYGI6-2AqaI_bzo7XpeSq1lLk",
 						"type": "text"
 					}
 				],
@@ -339,7 +356,7 @@
 			"response": []
 		},
 		{
-			"name": "Reset Password Request",
+			"name": "Reset Password Request Email",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -353,7 +370,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/user/resetPasswordRequest",
+					"raw": "http://localhost:3000/user/resetPasswordRequestEmail",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -361,7 +378,36 @@
 					"port": "3000",
 					"path": [
 						"user",
-						"resetPasswordRequest"
+						"resetPasswordRequestEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password Request Mobile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9804710805\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/resetPasswordRequestMobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"resetPasswordRequestMobile"
 					]
 				}
 			},
@@ -374,7 +420,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"otp\":\"w37tyd\",\n\t\"password\":\"Qwerty1234\"\n}",
+					"raw": "{\n\t\"otp\":\"933844\",\n\t\"password\":\"Qwerty1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -403,7 +449,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiY2UxNWQ0OTktODhkMy00MTU2LWEzOGYtYWY5NTU1NWJlZGM0IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTAxVDE2OjI2OjEyLjgwN1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wMVQxNjoyNjoxMi44MDdaIiwicGFzc3dvcmRfY2hhbmdlZCI6IjIwMjAtMDQtMDFUMTg6NTI6NDQuMzUwWiIsImlhdCI6MTU4NTgwOTIzNywiZXhwIjoxNTg2NDE0MDM3fQ.O8lIPheZpQuBKzoBpPi-JeCxma89Z6ARjVd_t-PtbVQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjoxLCJtb2JpbGVfdmVyaWZpZWQiOjEsInVzZXJfdHlwZSI6MCwiY3JlYXRlZF9hdCI6IjIwMjAtMDQtMDdUMTc6MjE6MjIuOTc4WiIsInVwZGF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJpYXQiOjE1ODYyODA2MDQsImV4cCI6MTU4Njg4NTQwNH0.UjiO-rqkqNoXxI40rMgcuN0ryEcUJ9Pt5iyVhNYbv6w",
 						"type": "text"
 					},
 					{
@@ -414,7 +460,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"newPassword\":\"1234\"\n}",
+					"raw": "{\n\t\"password\":\"1234\",\n\t\"newPassword\":\"Qwerty1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -443,7 +489,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNGI4YmYzMGUtYWM1Zi00YTExLWFlNjctNGRkYTFlYTAwNjg0IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDc6NDguMDQ3WiIsImlhdCI6MTU4NTgzNTMzOCwiZXhwIjoxNTg2NDQwMTM4fQ.a_r_CJQad_sO32fnUQM6Qok1IRcwMGj5OoGMD8Ih4vg",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6InByYW5hYmxvZGhAb3V0bG9vay5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxMjQ1LCJleHAiOjE1ODY4ODYwNDV9.c23ANpR3JPaVYEFr8iC0iE-rv8ualxrrZWWRYAIVHp8",
 						"type": "text"
 					},
 					{
@@ -483,7 +529,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmZjYmRjZWQtMzQ3Yy00Zjc3LTlmYzAtYTM0YjMyMTQwYjA5IiwiY29tcGFueV9uYW1lIjoiQ19TIiwiZW1haWwiOiJidW1iYTAwN2xvZGhAZ21haWwuY29tIiwiY29udGFjdF9udW1iZXIiOiI5ODA0NzEwODA1IiwidXNlcl90eXBlIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0wNC0wMlQxMzoxNzo0My4yODNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMDQtMDJUMTM6NDk6MDkuODExWiIsImlhdCI6MTU4NTgzODAwMiwiZXhwIjoxNTg2NDQyODAyfQ.biPIoy85llC66u2on5zHSu9YHt00EvezpIpnxIjpbmk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxODI5LCJleHAiOjE1ODY4ODY2Mjl9.QUKjWO_cQgXPdYtNFl7e_gu0yGqBdo4jF5_dGIcyRfQ",
 						"type": "text"
 					},
 					{
@@ -494,7 +540,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"email\":\"pranablodh@outlook.com\"\n}"
+					"raw": "{\n\t\"password\":\"Qwerty1234\",\n\t\"email\":\"bumba007lodh@gmail.com\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/user/changeEmail",
@@ -518,13 +564,13 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYzY3OTIzODItNTAzYy00NjgxLWJmNTMtZWVmYWI4ZWNkYWU2IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA2VDA3OjU4OjE2Ljc2N1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wNlQwNzo1ODoxNi43NjdaIiwiaWF0IjoxNTg2MTY0MjM1LCJleHAiOjE1ODY3NjkwMzV9.N-yMfSgOFRDRDKvJm8e9F6qtnzLCVV6RSGNDW8_xkyw",
-						"type": "text"
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxODI5LCJleHAiOjE1ODY4ODY2Mjl9.QUKjWO_cQgXPdYtNFl7e_gu0yGqBdo4jF5_dGIcyRfQ"
 					},
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -546,81 +592,6 @@
 					"path": [
 						"user",
 						"changeMobile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Session List",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"user\":\"9804710805\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/user/sessionList",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user",
-						"sessionList"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Resend SMS OTP",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYzY3OTIzODItNTAzYy00NjgxLWJmNTMtZWVmYWI4ZWNkYWU2IiwiY29tcGFueV9uYW1lIjoiQ1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA2VDA3OjU4OjE2Ljc2N1oiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wNlQwNzo1ODoxNi43NjdaIiwiaWF0IjoxNTg2MTY0MjM1LCJleHAiOjE1ODY3NjkwMzV9.N-yMfSgOFRDRDKvJm8e9F6qtnzLCVV6RSGNDW8_xkyw",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/user/resendSMSOtp",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user",
-						"resendSMSOtp"
 					]
 				}
 			},

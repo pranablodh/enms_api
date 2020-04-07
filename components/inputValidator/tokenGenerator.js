@@ -4,14 +4,16 @@ dotenv.config();
 
 module.exports = 
 {
-    generateToken: function(uuid, company_name, email, contact_number, user_type, created_at, updated_at)
+    generateToken: function(company_name, email, contact_number, email_verified, mobile_verified, 
+    user_type, created_at, updated_at)
     {
         const token = jwt.sign
         ({
-          uuid: uuid,
           company_name: company_name,
           email: email,
           contact_number: contact_number,
+          email_verified: email_verified,
+          mobile_verified: mobile_verified,
           user_type: user_type,
           created_at: created_at,
           updated_at: updated_at

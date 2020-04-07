@@ -30,7 +30,7 @@ const resetPasswordFunction = (req, response) =>
         else if(res.rows.length === 0)
         {
             db.pool.end;
-            return response.status(400).send({'Message': 'User Not Registered.'});  
+            return response.status(400).send({'Message': 'Wrong OTP.'});  
         }
 
         else

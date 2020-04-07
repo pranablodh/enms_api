@@ -3,8 +3,7 @@ const db  = require('../database/dbConnection/pgPool');
 
 const authentication = (req, response, next) =>
 {
-    const token   = req.headers['x-access-token'];
-    const newFlag = req.headers['new-flag'];
+    const token = req.headers['x-access-token'];
 
     if(!token) 
     {
@@ -19,11 +18,14 @@ const authentication = (req, response, next) =>
             return response.status(400).send({'Message': 'Invalid Token'});
         }
 
-        const createQuery = `SELECT * FROM user_token WHERE uuid = $1 AND access_token = $2`
+        //const createQuery = `SELECT * FROM user_token WHERE uuid = $1 AND access_token = $2`
+        const createQuery = `SELECT * FROM user_token WHERE uuid = (SELECT uuid FROM user_info WHERE email = $1 
+        OR email = $2 OR contact_number = $1 OR contact_number = $2) AND access_token = $3`
 
         const values = 
         [
-            decoded.uuid,
+            decoded.email,
+            decoded.contact_number,
             req.headers['x-access-token']
         ];
 
@@ -39,26 +41,11 @@ const authentication = (req, response, next) =>
             else if(res.rows.length > 0)
             {
                 db.pool.end;
-                req.body.uuid = decoded.uuid;
+                req.body.uuid = res.rows[0].uuid;
                 next();
             }
 
-            else if(res.rows.length === 0 && newFlag === '1')
-            {
-                db.pool.end;
-                req.body.uuid = decoded.uuid;
-                req.subject   = process.env.REG_OTP_SUBJECT;
-                req.message   = process.env.REG_OTP_MESSAGE;
-                next();
-            }
-
-            else if(res.rows.length === 0 && newFlag === '0')
-            {
-                db.pool.end;
-                return response.status(401).send({'Message': 'Access Denied'});
-            }
-
-            else if(res.rows.length === 0 && typeof newFlag === 'undefined')
+            else if(res.rows.length === 0)
             {
                 db.pool.end;
                 return response.status(401).send({'Message': 'Access Denied'});

@@ -1,10 +1,12 @@
 const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
 const otp            = require('../../otp/otpGenerator');
+const token          = require('../../inputValidator/tokenGenerator');
+const moment         = require('moment');
 const dotenv         = require('dotenv');
 dotenv.config();
 
-const changeEmail = (req, response, next) =>
+const changeEmail = (req, response) =>
 {
     if(!inputValidator.isValidEmail(req.body.email)) 
     {
@@ -14,7 +16,7 @@ const changeEmail = (req, response, next) =>
     const createQuery = `WITH 
     upd1 AS(UPDATE user_verified SET email_verified = 0 WHERE uuid = $1),
     upd2 AS(UPDATE user_otp SET email_otp = $3 WHERE uuid = $1)
-    UPDATE user_info SET email = $2 WHERE uuid = $1 RETURNING uuid, email`
+    UPDATE user_info SET email = $2 WHERE uuid = $1 RETURNING *`
 
     const values = 
     [
@@ -40,11 +42,8 @@ const changeEmail = (req, response, next) =>
 
         else if(res.rows.length > 0)
         {
-            db.pool.end;
-            req.subject = process.env.EMAIL_CHANGE_SUBJECT;
-            req.message = process.env.EMAIL_CHANGE_MESSAGE;
-            next();
-            return response.status(200).send({'Message': 'Email ID Updated.'});
+            db.pool.end;   
+            return response.status(202).send({'Message': 'Email ID Changed.'});
         }
 
         else

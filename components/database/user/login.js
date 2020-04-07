@@ -44,25 +44,7 @@ const login = (req, response, next) =>
 
         else if(inputValidator.comparePassword(res.rows[0].password, req.body.password))
         {
-            if(res.rows[0].email_verified === 0 && res.rows[0].mobile_verified === 0)
-            {
-                db.pool.end;
-                return response.status(400).send({'Message': 'Email and Mobile Number are Not Verifed'}); 
-            }
-
-            else if(res.rows[0].mobile_verified === 0)
-            {
-                db.pool.end;
-                return response.status(400).send({'Message': 'Mobile Number is Not Verifed'}); 
-            }
-
-            else if(res.rows[0].email_verified === 0)
-            {
-                db.pool.end;
-                return response.status(400).send({'Message': 'Email is Not Verifed'}); 
-            }
-
-            else if(res.rows[0].active_flag === 0)
+            if(res.rows[0].active_flag === 0)
             {
                 db.pool.end;
                 return response.status(403).send({'Message': 'Your Account is Deactivated'}); 
@@ -70,8 +52,9 @@ const login = (req, response, next) =>
 
             else
             {
-                req.body.token = token.generateToken(res.rows[0].uuid, res.rows[0].company_name,
-                                 res.rows[0].email, res.rows[0].contact_number, res.rows[0].user_type, 
+                req.body.token = token.generateToken(res.rows[0].company_name,
+                                 res.rows[0].email, res.rows[0].contact_number, res.rows[0].email_verified, 
+                                 res.rows[0].mobile_verified, res.rows[0].user_type, 
                                  res.rows[0].created_at, res.rows[0].updated_at);
                 req.body.uuid = res.rows[0].uuid;
                 next();

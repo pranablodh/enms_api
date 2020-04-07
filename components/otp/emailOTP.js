@@ -25,14 +25,14 @@ const transporter = nodemailer.createTransport
 //     }
 // });
 
-const sendOTP = (req, response, next) =>
+const sendOTP = (req, response) =>
 {
     const mailOptions = 
     {
         from: 'cs.covid.tracking@gmail.com',
         to: req.email,
-        subject: req.subject,
-        text: req.email_message
+        subject: process.env.EMAIL_OTP_SUBJECT,
+        text: process.env.REG_OTP_MESSAGE + " " + req.email_otp
     };
 
     transporter.sendMail(mailOptions, function(error, info)
@@ -40,14 +40,12 @@ const sendOTP = (req, response, next) =>
         if(error) 
         {
           console.log(error);
-          next();
           return response.status(400).send({'Message': 'OTP Not Sent'});
         } 
         
-        else 
+        else if(info.response)
         {
           console.log('Email sent: ' + info.response);
-          next();
           return response.status(200).send({'Message': 'OTP Sent'});
         }
     });

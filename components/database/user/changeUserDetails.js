@@ -54,8 +54,8 @@ const changeUserDetails = (req, response, next) =>
         else if(res.rows.length > 0)
         {
             db.pool.end;
-            const Token = token.generateToken(uuid, req.body.company_name, req.body.email, 
-                          req.body.contact_number, 0, res.rows[0].created_at, res.rows[0].updated_at); 
+            const Token = token.generateToken(res.rows[0].company_name, res.rows[0].email, res.rows[0].contact_number,
+            0, 0, 0, moment(new Date())._i, moment(new Date())._i, moment(new Date())._i);               
 
             req.body.token = Token;
             req.body.uuid = uuid;

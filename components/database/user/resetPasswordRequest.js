@@ -1,6 +1,6 @@
 const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
-const otp            = require('otp-generator');
+const otp            = require('../../otp/otpGenerator');
 const dotenv         = require('dotenv');
 dotenv.config();
 
@@ -17,13 +17,13 @@ const resetPassword = (req, response, next) =>
     }
 
     const createQuery = `INSERT INTO user_otp(uuid, email_otp, mobile_otp) VALUES((SELECT uuid
-    FROM user_info WHERE contact_number = $1 or email = $1), $2, $2)
+    FROM user_info WHERE contact_number = $1 OR email = $1), $2, $2)
     ON CONFLICT (uuid) DO UPDATE SET email_otp = EXCLUDED.email_otp, mobile_otp = EXCLUDED.mobile_otp RETURNING *`
 
     const values = 
     [
         req.body.user,
-        otp.generate(6, { upperCase: false, specialChars: false })
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH)
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -38,9 +38,6 @@ const resetPassword = (req, response, next) =>
         else if(res.rows.length > 0)
         {
             db.pool.end;
-            req.subject   = process.env.PASSWORD_RESET_OTP_SUBJECT;
-            req.message   = process.env.PASSWORD_RESET_OTP_MESSAGE;
-            req.body.uuid = res.rows[0].uuid;
             next();
         }
 

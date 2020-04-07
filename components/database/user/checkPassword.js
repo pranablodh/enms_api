@@ -33,7 +33,7 @@ const checkPassword = (req, response, next) =>
         else if(inputValidator.comparePassword(res.rows[0].password, req.body.password))
         {
             db.pool.end;
-            next();
+            return next();
         }
 
         else if(!inputValidator.comparePassword(res.rows[0].password, req.body.password))

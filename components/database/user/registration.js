@@ -65,12 +65,8 @@ const newUser = (req, response, next) =>
         if(!err)
         {
             db.pool.end;
-            req.regFlag = 1;
-            req.subject = process.env.REG_OTP_SUBJECT;
-            req.message = process.env.REG_OTP_MESSAGE;
-            next();
-            return response.status(201).send({'Token': token.generateToken(uuid, req.body.company_name, 
-            req.body.email, req.body.contact_number, 0, moment(new Date())._i, moment(new Date())._i, moment(new Date())._i)});               
+            return response.status(201).send({'Token': token.generateToken(req.body.company_name, 
+            req.body.email, req.body.contact_number, 0, 0, 0, moment(new Date())._i, moment(new Date())._i, moment(new Date())._i)});               
         }
 
         else if(err.routine === '_bt_check_unique')
@@ -102,7 +98,7 @@ const newUser = (req, response, next) =>
         {
             console.log(err);
             db.pool.end;
-            return response.status(400).send({'Message': 'User Not Registered'});
+            return response.status(400).send({'Message': 'Registration Failed.'});
         }
     });
 }
