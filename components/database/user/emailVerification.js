@@ -1,6 +1,6 @@
 const db = require('../dbConnection/pgPool');
 
-const verifyEmail = (req, response) =>
+const verifyEmail = (req, response, next) =>
 {
     const createQuery = `UPDATE user_verified SET email_verified = 1 FROM user_otp
     WHERE user_verified.uuid = user_otp.uuid AND user_otp.uuid = $1 AND user_otp.email_otp = $2 RETURNING *`
@@ -29,6 +29,7 @@ const verifyEmail = (req, response) =>
         else
         {
             db.pool.end;
+            next();
             return response.status(200).send({'Message': 'Email Verified.'});
         }
     });

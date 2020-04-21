@@ -1,7 +1,7 @@
 const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
 
-const resetPasswordFunction = (req, response) =>
+const resetPasswordFunction = (req, response, next) =>
 {
     const createQuery = `UPDATE user_cred SET password = $1, pass_updated_at = current_timestamp
     WHERE uuid = (SELECT uuid FROM user_otp WHERE email_otp = $2 OR mobile_otp = $2) RETURNING *`
@@ -24,6 +24,8 @@ const resetPasswordFunction = (req, response) =>
         else if(res.rows.length > 0)
         {
             db.pool.end;
+            req.body.uuid = res.rows[0].uuid;
+            next();
             return response.status(201).send({'Message': 'Password Changed.'});   
         }
 

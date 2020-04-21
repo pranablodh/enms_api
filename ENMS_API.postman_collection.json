@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "0e552dcc-6a72-4120-b476-a33c3bf9f352",
+		"_postman_id": "a14eecb4-a17f-46ef-879c-8ed6df61e650",
 		"name": "ENMS_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Registration",
+			"name": "User Registration",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -35,13 +35,13 @@
 			"response": []
 		},
 		{
-			"name": "Email Verify",
+			"name": "User Email Verify",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjkwMzQ1LCJleHAiOjE1ODY4OTUxNDV9.V9IQKL0J0EdEqBWW1q_oqly1i3iJhDlAbU6z5OQawbs",
 						"type": "text"
 					},
 					{
@@ -52,7 +52,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"otp\":\"462749\"\n}",
+					"raw": "{\n\t\"otp\":\"693634\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -75,23 +75,18 @@
 			"response": []
 		},
 		{
-			"name": "Mobile Verify",
+			"name": "User Mobile Verify",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjkwMzQ1LCJleHAiOjE1ODY4OTUxNDV9.V9IQKL0J0EdEqBWW1q_oqly1i3iJhDlAbU6z5OQawbs",
 						"type": "text"
 					},
 					{
 						"key": "Content-Type",
 						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "new-flag",
-						"value": "1",
 						"type": "text"
 					}
 				],
@@ -120,7 +115,7 @@
 			"response": []
 		},
 		{
-			"name": "Send Email OTP",
+			"name": "User Send Email OTP",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -163,7 +158,7 @@
 			"response": []
 		},
 		{
-			"name": "Send SMS OTP",
+			"name": "User Send SMS OTP",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -172,7 +167,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxOTI2LCJleHAiOjE1ODY4ODY3MjZ9.l2zgPHfWqBQYtgyHjmtPwXrPsl8VWuPduBHdruRaXbQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjkwMzQ1LCJleHAiOjE1ODY4OTUxNDV9.V9IQKL0J0EdEqBWW1q_oqly1i3iJhDlAbU6z5OQawbs",
 						"type": "text"
 					},
 					{
@@ -206,7 +201,7 @@
 			"response": []
 		},
 		{
-			"name": "Login",
+			"name": "User Login",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -238,7 +233,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Session List",
+			"name": "User Get Session List",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -270,16 +265,13 @@
 			"response": []
 		},
 		{
-			"name": "Logout",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "User Logout",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MCwibW9iaWxlX3ZlcmlmaWVkIjowLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg2MjgxODI5LCJleHAiOjE1ODY4ODY2Mjl9.QUKjWO_cQgXPdYtNFl7e_gu0yGqBdo4jF5_dGIcyRfQ",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg3NDYwNjE5LCJleHAiOjE1ODgwNjU0MTksImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.ZXWrmqD7j3sGsaMDJwXcEVRHwqozsgmKo2PyApaVAY0",
 						"type": "text"
 					},
 					{
@@ -313,7 +305,7 @@
 			"response": []
 		},
 		{
-			"name": "Deactivate Account",
+			"name": "User Deactivate Account",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -356,7 +348,7 @@
 			"response": []
 		},
 		{
-			"name": "Reset Password Request Email",
+			"name": "User Reset Password Request Email",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -385,7 +377,7 @@
 			"response": []
 		},
 		{
-			"name": "Reset Password Request Mobile",
+			"name": "User Reset Password Request Mobile",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -414,13 +406,13 @@
 			"response": []
 		},
 		{
-			"name": "Reset Password",
+			"name": "User Reset Password",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"otp\":\"933844\",\n\t\"password\":\"Qwerty1234\"\n}",
+					"raw": "{\n\t\"otp\":\"693634\",\n\t\"password\":\"Qwerty1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -443,7 +435,7 @@
 			"response": []
 		},
 		{
-			"name": "Change Password",
+			"name": "User Change Password",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -483,7 +475,7 @@
 			"response": []
 		},
 		{
-			"name": "Change User Details",
+			"name": "User Change User Details",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -523,7 +515,7 @@
 			"response": []
 		},
 		{
-			"name": "Change Email",
+			"name": "User Change Email",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -558,7 +550,7 @@
 			"response": []
 		},
 		{
-			"name": "Change Mobile",
+			"name": "User Change Mobile",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -592,6 +584,37 @@
 					"path": [
 						"user",
 						"changeMobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Clear Session",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg3NDYwNDQzLCJleHAiOjE1ODgwNjUyNDMsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.ttR5SfaLCsZFbaAmBZt7hG6cKW5UZATIL3E9Oq4wPZc",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/clearSession",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"clearSession"
 					]
 				}
 			},

@@ -1,8 +1,6 @@
 const db             = require('../dbConnection/pgPool');
 const inputValidator = require('../../inputValidator/inputValidator');
 const otp            = require('../../otp/otpGenerator');
-const token          = require('../../inputValidator/tokenGenerator');
-const moment         = require('moment');
 const dotenv         = require('dotenv');
 dotenv.config();
 
