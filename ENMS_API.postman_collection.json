@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba007lodh@gmail.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"121asAJasfgfgf7sasa3aasa55hK\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty1234\"\n}",
+					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba000007lodh@gmail.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"02AABCT3518Q1Z8\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty@1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -271,7 +271,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg3NDYwNjE5LCJleHAiOjE1ODgwNjU0MTksImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.ZXWrmqD7j3sGsaMDJwXcEVRHwqozsgmKo2PyApaVAY0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg3NDkxODc5LCJleHAiOjE1ODgwOTY2NzksImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.5cRAjLVjDz4yFAiUlfXXg9UzYgVWj3zNWmblJZYHs6k",
 						"type": "text"
 					},
 					{
@@ -615,6 +615,37 @@
 					"path": [
 						"user",
 						"clearSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Self Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDX1MiLCJlbWFpbCI6ImJ1bWJhMDA3bG9kaEBnbWFpbC5jb20iLCJjb250YWN0X251bWJlciI6Ijk4MDQ3MTA4MDUiLCJlbWFpbF92ZXJpZmllZCI6MSwibW9iaWxlX3ZlcmlmaWVkIjoxLCJ1c2VyX3R5cGUiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTA3VDE3OjIxOjIyLjk3OFoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0wN1QxNzozMDo1OS44NjRaIiwiaWF0IjoxNTg3NDkxODc5LCJleHAiOjE1ODgwOTY2NzksImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.5cRAjLVjDz4yFAiUlfXXg9UzYgVWj3zNWmblJZYHs6k",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/selfDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"selfDetails"
 					]
 				}
 			},

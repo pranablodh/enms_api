@@ -6,12 +6,37 @@ uuidv4();
 
 const changeUserDetails = (req, response, next) =>
 {
-    if(!req.body.company_name || !req.body.owner_name || !req.body.registration_number || !req.body.gstin
-        || !req.body.address_1 || !req.body.address_2 || !req.body.address_3 || !req.body.city
-        || !req.body.district|| !req.body.pin_code || !req.body.state)
+    if(!req.body.company_name || !req.body.registration_number || !req.body.address_1 
+        || !req.body.address_2 || !req.body.address_3 || !req.body.district)
     {
-        return response.status(400).send({'Message': 'Some Values Are Missing'});
+        return response.status(400).send({'Message': 'Some Values Are Missing.'});
     }
+
+    if(!inputValidator.isvalidGSTIN(req.body.gstin)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid GSTIN.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.owner_name)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid Name.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.city)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid City Name.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.state)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid State Name.'});
+    }
+
+    if(!inputValidator.isvalidPinCode(req.body.pin_code)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Pin Code.'});
+    }
+
 
     const uuid  = uuidv4(req.body.gstin);
 

@@ -25,6 +25,7 @@ const changeMobile           = require('../../database/user/changeMobile');
 const destroyOtp             = require('../../database/otp/destroyOtp');
 const getUserList            = require('../../database/superAdmin/getUserList');
 const clearSession           = require('../../database/user/clearSession');
+const selfDetails            = require('../../database/user/selfDetails');
 
 
 router.post('/registration', userRegistration.newUser);
@@ -42,6 +43,7 @@ router.post('/changePassword', auth.authentication, checkPassword.checkPassword,
 router.post('/changeUserDetails', auth.authentication, checkPassword.checkPassword, changeUserDetails.changeUserDetails, tokenStore.tokenStore);
 router.post('/changeEmail', auth.authentication, checkPassword.checkPassword, changeEmail.changeEmail);
 router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, changeMobile.changeMobile);
+router.get('/selfDetails', auth.authentication, selfDetails.selfDetails);
 router.get('/sessionList', sessionList.sessionList);
 router.delete('/clearSession', clearSession.clearSession);
 

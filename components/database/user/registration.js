@@ -6,21 +6,57 @@ const moment         = require('moment');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
 
-const newUser = (req, response, next) =>
+const newUser = (req, response) =>
 {
-    const uuid  = uuidv4(req.body.gstin);
-
-    req.body.uuid  = uuid;
-
-    if(!req.body.email || !req.body.password)
+    if(!req.body.company_name || !req.body.registration_number || !req.body.address_1 
+        || !req.body.address_2 || !req.body.address_3 || !req.body.district)
     {
-        return response.status(400).send({'Message': 'Some Values Are Missing'});
+        return response.status(400).send({'Message': 'Some Values Are Missing.'});
+    }
+
+    if(!inputValidator.isValidMobileNumber(req.body.contact_number)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid Mobile Number.'});
     }
 
     if(!inputValidator.isValidEmail(req.body.email)) 
     {
-        return response.status(400).send({'Message': 'Please Enter a Valid Email Address'});
+        return response.status(400).send({'Message': 'Please Enter a Valid Email Address.'});
     }
+
+    if(!inputValidator.isValidPassword(req.body.password)) 
+    {
+        return response.status(400).send({'Message': 'Password Length Should Be In Between 8 to 15 and Must Contain Atleast' + 
+       ' One Upper Case, One Lower Case, One Number and One Special Character.'});
+    }
+
+    if(!inputValidator.isvalidGSTIN(req.body.gstin)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid GSTIN.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.owner_name)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid Name.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.city)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid City Name.'});
+    }
+
+    if(!inputValidator.isValidString(req.body.state)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Valid State Name.'});
+    }
+
+    if(!inputValidator.isvalidPinCode(req.body.pin_code)) 
+    {
+        return response.status(400).send({'Message': 'Please Enter a Pin Code.'});
+    }
+
+    const uuid  = uuidv4(req.body.gstin);
+    req.body.uuid  = uuid;
 
     const createQuery = `WITH data(uuid, company_name, owner_name, contact_number, email, registration_number,
     gstin, address_1, address_2, address_3, city, district, pin_code, state, password, user_type, email_verified, 
@@ -81,16 +117,6 @@ const newUser = (req, response, next) =>
             else if(err.detail.includes('email'))
             {
                 return response.status(405).send({'Message': 'User with that Email ID Already Exist'});
-            }
-
-            else if(err.detail.includes('gstin'))
-            {
-                return response.status(405).send({'Message': 'User with that GSTIN Already Exist'});
-            }
-
-            else if(err.detail.includes('registration_number'))
-            {
-                return response.status(405).send({'Message': 'User with that Registration Number Already Exist'});
             }
         }
 
