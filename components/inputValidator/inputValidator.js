@@ -1,5 +1,6 @@
 const bcrypt            = require('bcrypt');
 const passwordValidator = require('password-validator');
+const salt_round        = 10; 
 
 const schema = new passwordValidator();
 
@@ -11,7 +12,7 @@ module.exports =
 {
     hashPassword: function(password)
     {
-        return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(salt_round));
     },
 
     comparePassword: function(hashPassword, password) 

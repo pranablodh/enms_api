@@ -93,7 +93,7 @@ const newUser = (req, response) =>
         0,
         0,
         otp.otpGenerator(process.env.OTP_MAX_LENGTH),
-        otp.otpGenerator(process.env.OTP_MAX_LENGTH)
+        otp.otpGenerator(process.env.OTP_MAX_LENGTH),
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
