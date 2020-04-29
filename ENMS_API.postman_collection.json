@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Arpan Sen\",\n    \"contact_number\":\"9804710805\",\n    \"email\":\"bumba007lodh@gmail.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"02AABCT3518Q1Z8\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty@1234\"\n}",
+					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Pranab Lodh\",\n    \"contact_number\":\"9903917455\",\n    \"email\":\"pranablodh@csiot.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"02AABCT3518Q1Z8\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty@1234\",\n    \"referral_code\":\"6xtlu8GE\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -271,7 +271,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDAwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsInVzZXJfdHlwZSI6MCwiY3JlYXRlZF9hdCI6IjIwMjAtMDQtMjhUMTY6MDE6MTEuNTgzWiIsInVwZGF0ZWRfYXQiOiIyMDIwLTA0LTI4VDE2OjAxOjExLjU4M1oiLCJpYXQiOjE1ODgwOTE5NzcsImV4cCI6MTU4ODY5Njc3NywiaXNzIjoiQ29uc2lzdGVudCBTZXJ2aWNlcyJ9.HIQDjw1dCKpm3QXdgJbS7ma-HStkM6lSxl-v1lL_gEE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTc4NzAxLCJleHAiOjE1ODg3ODM1MDEsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.BOOWj7UfJyU5_mI8tvDF2MiT-81hOq61lUNmOzPHK08",
 						"type": "text"
 					},
 					{
@@ -658,7 +658,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDAwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsInVzZXJfdHlwZSI6MCwiY3JlYXRlZF9hdCI6IjIwMjAtMDQtMjhUMTY6MDE6MTEuNTgzWiIsInVwZGF0ZWRfYXQiOiIyMDIwLTA0LTI4VDE2OjAxOjExLjU4M1oiLCJpYXQiOjE1ODgwOTE5NzcsImV4cCI6MTU4ODY5Njc3NywiaXNzIjoiQ29uc2lzdGVudCBTZXJ2aWNlcyJ9.HIQDjw1dCKpm3QXdgJbS7ma-HStkM6lSxl-v1lL_gEE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTc4NzAxLCJleHAiOjE1ODg3ODM1MDEsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.BOOWj7UfJyU5_mI8tvDF2MiT-81hOq61lUNmOzPHK08",
 						"type": "text"
 					},
 					{
@@ -677,6 +677,37 @@
 					"path": [
 						"admin",
 						"getCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Get User List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTgzNzg4LCJleHAiOjE1ODg3ODg1ODgsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.wQOfCchB1Tr42tDMHBUeVQm3xXop2OCtWRQAnt3oJPE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/admin/getUserList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"getUserList"
 					]
 				}
 			},

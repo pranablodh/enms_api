@@ -12,6 +12,7 @@ const login                  = require('../../database/user/login');
 const tokenStore             = require('../../database/user/sessionTokenStore');
 const logout                 = require('../../database/user/logout');
 const auth                   = require('../../middleware/auth');
+const referralCode           = require('../../middleware/referralCodeValidator');
 const deactiveAccount        = require('../../database/user/deactivateAccount');
 const deactivatingFunction   = require('../../database/user/deactivatingFunction');
 const resetPassword          = require('../../database/user/resetPasswordRequest');
@@ -23,12 +24,11 @@ const changeUserDetails      = require('../../database/user/changeUserDetails');
 const changeEmail            = require('../../database/user/changeEmail');
 const changeMobile           = require('../../database/user/changeMobile');
 const destroyOtp             = require('../../database/otp/destroyOtp');
-const getUserList            = require('../../database/superAdmin/getUserList');
 const clearSession           = require('../../database/user/clearSession');
 const selfDetails            = require('../../database/user/selfDetails');
 
 
-router.post('/registration', userRegistration.newUser);
+router.post('/registration', referralCode.referralCodeValidator, userRegistration.newUser);
 router.post('/verifyEmail', auth.authentication, verifyEmail.verifyEmail, destroyOtp.destroyOtpEmail);
 router.post('/verifyMobile', auth.authentication, verifyMobile.verifyMobile, destroyOtp.destroyOtpMobile);
 router.get('/sendEmailOtp', auth.authentication, otpFetch.fetchOtp, emailOtp.sendOTP);
@@ -46,8 +46,6 @@ router.post('/changeMobile', auth.authentication, checkPassword.checkPassword, c
 router.get('/selfDetails', auth.authentication, selfDetails.selfDetails);
 router.get('/sessionList', sessionList.sessionList);
 router.delete('/clearSession', clearSession.clearSession);
-
-router.get('/list', getUserList.getUserList);
 
 module.exports = 
 {

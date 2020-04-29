@@ -15,11 +15,10 @@ const login = (req, response, next) =>
     }
 
     const createQuery = `SELECT i.uuid, i.company_name, i.email, i.contact_number, i.created_at, i.updated_at, 
-    c.password, c.active_flag, c.pass_updated_at, v.email_verified, v.mobile_verified, user_type
+    c.password, c.active_flag, c.pass_updated_at, v.email_verified, v.mobile_verified
     FROM user_info i
     INNER JOIN user_cred c ON c.uuid = i.uuid 
     INNER JOIN user_verified v ON v.uuid = c.uuid
-    INNER JOIN user_type t ON t.uuid = v.uuid
     WHERE i.email = $1 OR i.contact_number = $1`
 
     const values = 
@@ -54,8 +53,8 @@ const login = (req, response, next) =>
             {
                 req.body.token = token.generateToken(res.rows[0].company_name,
                                  res.rows[0].email, res.rows[0].contact_number, res.rows[0].email_verified, 
-                                 res.rows[0].mobile_verified, res.rows[0].user_type, 
-                                 res.rows[0].created_at, res.rows[0].updated_at);
+                                 res.rows[0].mobile_verified, res.rows[0].created_at, res.rows[0].updated_at);
+                                 
                 req.body.uuid = res.rows[0].uuid;
                 next();
             }

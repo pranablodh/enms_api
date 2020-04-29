@@ -60,15 +60,16 @@ const newUser = (req, response) =>
 
     const createQuery = `WITH data(uuid, company_name, owner_name, contact_number, email, registration_number,
     gstin, address_1, address_2, address_3, city, district, pin_code, state, password, user_type, email_verified, 
-    mobile_verified, email_otp, mobile_otp) AS(VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 
-    $15, $16, $17, $18, $19, $20)),
+    mobile_verified, email_otp, mobile_otp, referral_uuid) AS(VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 
+    $15, $16, $17, $18, $19, $20, $21)),
     ins1 AS(INSERT INTO user_info(uuid, company_name, owner_name, contact_number, email, registration_number, gstin, 
     address_1, address_2, address_3, city, district, pin_code, state, created_at, updated_at) 
     SELECT uuid, company_name, owner_name, contact_number, email, registration_number, gstin,address_1, address_2, address_3, 
     city, district, pin_code, state, current_timestamp, current_timestamp FROM data RETURNING *),
 	ins2 AS(INSERT INTO user_type(uuid, user_type) SELECT uuid, CAST(user_type as int) FROM data RETURNING uuid),
     ins3 AS(INSERT INTO user_cred(uuid, password, active_flag, pass_updated_at) SELECT uuid, password, 1, current_timestamp FROM data RETURNING uuid),
-    ins4 AS(INSERT INTO user_otp(uuid, email_otp, mobile_otp) SELECT uuid, email_otp, mobile_otp FROM data RETURNING uuid)
+    ins4 AS(INSERT INTO user_otp(uuid, email_otp, mobile_otp) SELECT uuid, email_otp, mobile_otp FROM data RETURNING uuid),
+    ins5 AS(INSERT INTO user_referral_track(referred_by, referred_to, reference_time) SELECT referral_uuid, uuid, current_timestamp FROM data RETURNING referred_to)
     INSERT INTO user_verified(uuid, email_verified, mobile_verified) SELECT uuid, CAST(email_verified as int), 
     CAST(mobile_verified as int) FROM data RETURNING uuid`
 
@@ -94,6 +95,7 @@ const newUser = (req, response) =>
         0,
         otp.otpGenerator(process.env.OTP_MAX_LENGTH),
         otp.otpGenerator(process.env.OTP_MAX_LENGTH),
+        req.body.referral_uuid
     ];
 
     db.pool.query(createQuery, values, (err, res)=>
@@ -124,7 +126,7 @@ const newUser = (req, response) =>
         {
             console.log(err);
             db.pool.end;
-            return response.status(400).send({'Message': 'Registration Failed.'});
+            return response.status(500).send({'Message': 'Registration Failed.'});
         }
     });
 }

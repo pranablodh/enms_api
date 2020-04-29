@@ -40,6 +40,11 @@ module.exports =
         return /^[a-z][a-z\s]*$/i.test(data);
     },
 
+    isValidAlphaNumericString: function(data)
+    {
+        return /^[a-z0-9]+$/i.test(data);
+    },
+
     isvalidPinCode: function(pin)
     {
         return /^\d{6}(,\d{6})*$/.test(pin)
