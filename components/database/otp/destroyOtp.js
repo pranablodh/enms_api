@@ -16,11 +16,13 @@ const destroyOtpEmail = (req, response) =>
         if(err)
         {
             console.log(err);
+            db.pool.end;
         }
 
         else
         {
             //console.log(res.rows[0]);
+            db.pool.end;
         }
     });
 }

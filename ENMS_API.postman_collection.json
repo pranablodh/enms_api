@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Pranab Lodh\",\n    \"contact_number\":\"9903917455\",\n    \"email\":\"pranablodh@csiot.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"02AABCT3518Q1Z8\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty@1234\",\n    \"referral_code\":\"6xtlu8GE\"\n}",
+					"raw": "{\n\t\"company_name\":\"CS\",\n    \"owner_name\":\"Pranab Lodh\",\n    \"contact_number\":\"8013691152\",\n    \"email\":\"pranablodh@cs_iot.com\",\n    \"registration_number\":\"ABCD1234454FK\",\n    \"gstin\":\"02AABCT3518Q1Z8\",\n    \"address_1\":\"Bankimpally East\",\n    \"address_2\":\"Madhyamgram\",\n    \"address_3\":\"PO- Madhyamgram\",\n    \"city\":\"Kolkata\",\n    \"district\":\"North 24 Parganas\",\n    \"pin_code\":\"700129\",\n    \"state\":\"West Bengal\",\n    \"password\":\"Qwerty@1234\",\n    \"referral_code\":\"MlBi8CWI\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -210,7 +210,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"user\":\"9804710805\",\n\t\"password\":\"Qwerty@1234\"\n}",
+					"raw": "{\n\t\"user\":\"8013691152\",\n\t\"password\":\"Qwerty@1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -271,7 +271,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTc4NzAxLCJleHAiOjE1ODg3ODM1MDEsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.BOOWj7UfJyU5_mI8tvDF2MiT-81hOq61lUNmOzPHK08",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MjI0OTQwLCJleHAiOjE1ODg4Mjk3NDAsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.22isZEVr9v_whMuAOXAMxazM6gsXdXL9yBYqtRuhdTU",
 						"type": "text"
 					},
 					{
@@ -658,7 +658,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTc4NzAxLCJleHAiOjE1ODg3ODM1MDEsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.BOOWj7UfJyU5_mI8tvDF2MiT-81hOq61lUNmOzPHK08",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoicHJhbmFibG9kaEBvdXRsb29rLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiODEwMDU4NDEwMCIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjU4OjE3LjcyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo1ODoxNy43MjFaIiwiaWF0IjoxNTg4MjMxMDI0LCJleHAiOjE1ODg4MzU4MjQsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.zdAXJAAgHM57tcfombM8YNUWUVxhC_39FSYRudscz6Q",
 						"type": "text"
 					},
 					{
@@ -689,7 +689,7 @@
 				"header": [
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoiYnVtYmEwMDdsb2RoQGdtYWlsLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiOTgwNDcxMDgwNSIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjQyOjUxLjkyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo0Mjo1MS45MjFaIiwiaWF0IjoxNTg4MTgzNzg4LCJleHAiOjE1ODg3ODg1ODgsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.wQOfCchB1Tr42tDMHBUeVQm3xXop2OCtWRQAnt3oJPE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoicHJhbmFibG9kaEBvdXRsb29rLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiODEwMDU4NDEwMCIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjU4OjE3LjcyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo1ODoxNy43MjFaIiwiaWF0IjoxNTg4MjQxMjY3LCJleHAiOjE1ODg4NDYwNjcsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.uZtxxYfGmbHFyRs4RIODBmn073FHe6jcp_XMMWqP7vQ",
 						"type": "text"
 					},
 					{
@@ -708,6 +708,76 @@
 					"path": [
 						"admin",
 						"getUserList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin User Type Change",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoicHJhbmFibG9kaEBvdXRsb29rLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiODEwMDU4NDEwMCIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjU4OjE3LjcyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo1ODoxNy43MjFaIiwiaWF0IjoxNTg4MjMxMDI0LCJleHAiOjE1ODg4MzU4MjQsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.zdAXJAAgHM57tcfombM8YNUWUVxhC_39FSYRudscz6Q",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"8013691152\",\n\t\"new_type\":\"0\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/changeRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"changeRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Deactivate Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X25hbWUiOiJDUyIsImVtYWlsIjoicHJhbmFibG9kaEBvdXRsb29rLmNvbSIsImNvbnRhY3RfbnVtYmVyIjoiODEwMDU4NDEwMCIsImVtYWlsX3ZlcmlmaWVkIjowLCJtb2JpbGVfdmVyaWZpZWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTA0LTI5VDA5OjU4OjE3LjcyMVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yOVQwOTo1ODoxNy43MjFaIiwiaWF0IjoxNTg4MjQxMjY3LCJleHAiOjE1ODg4NDYwNjcsImlzcyI6IkNvbnNpc3RlbnQgU2VydmljZXMifQ.uZtxxYfGmbHFyRs4RIODBmn073FHe6jcp_XMMWqP7vQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\":\"9903917455\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/deactivateAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"deactivateAccount"
 					]
 				}
 			},
